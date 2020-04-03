@@ -22,8 +22,8 @@ char mta_odmocnina2(unsigned int m, double x, double *res){
 			koren = 0.5*(aprox + koren);
 			def = (koren-aprox)<0 ? -(koren-aprox) : (koren-aprox);
 		}
-		*res = koren;
-		return 0;
+	*res = koren;
+	return 0;
 		}		
 	}			
 
@@ -39,7 +39,7 @@ int main(){
 	
 	printf("%f^-%d = %f", x,m,res);
 	
-getchar();
-return 0;
+	getchar();
+	return 0;
 }
 
