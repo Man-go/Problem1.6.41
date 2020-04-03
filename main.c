@@ -10,21 +10,20 @@ char mta_odmocnina2(unsigned int m, double x, double *res){
 
 	def = (koren-aprox)<0 ? -(koren-aprox) : (koren-aprox);
 	
-	if((m%2==0) && (x<0)){
+	if((m%2==0) && (x<0)) 
 		return 1;
-	}
-	else {
-		while(def >= hyba){
-			aprox = x;
-			for(i = 1; i < m; i++){
-				aprox = aprox / koren;
-			}
-			koren = 0.5*(aprox + koren);
-			def = (koren-aprox)<0 ? -(koren-aprox) : (koren-aprox);
+
+	while(def >= hyba){
+		aprox = x;
+		for(i = 1; i < m; i++){
+			aprox = aprox / koren;
 		}
+		koren = 0.5*(aprox + koren);
+		def = (koren-aprox)<0 ? -(koren-aprox) : (koren-aprox);
+	}
+	
 	*res = koren;
-	return 0;
-		}		
+	return 0;		
 	}			
 
 int main(){
